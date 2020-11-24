@@ -1,6 +1,13 @@
 # GoGetter
 Tool to quickly create go projects and install multiple go packages
 
+## Install
+Tested only on Mac for now. Will be testing on Linux and windows. 
+`GOBIN=/usr/local/bin go install`
+
+Future Installs will hopefully be throuhg homebrew (mac), pacman/apt (linux) and chocolatey (windows)
+
+
 ## Basic Usage
 ```
   gogetter mk <project-name>  -u <username>  
