@@ -14,7 +14,17 @@ var rootCmd = &cobra.Command{
 	Use:   "gogetter",
 	Short: "Easily create go projects",
 	Long: `Makes creating go projects super easy and quick, just type a single command and your			will have a project, set with the correct structure and a git repo. Also allows you to			install muliple packages with a single commang`,
-	Run: func(cmd *cobra.Command, args []string) { fmt.Println("Hello") },
+	PreRunE: func(cmd *cobra.Command, args []string) error {
+		if len(args) == 0 {
+			cmd.Help()
+		}
+		return nil
+	},
+	Run: func(cmd *cobra.Command, args []string) {
+		if len(args) == 0 {
+			cmd.Help()
+		}
+	},
 }
 
 func Execute() {
