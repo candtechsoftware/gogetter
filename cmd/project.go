@@ -47,6 +47,20 @@ func createGoModule(module string) {
 	if err != nil {
 		log.Fatalf("Failed in creating a go module command: %s", err)
 	}
+
+	downloadTemplate()
+
+}
+
+// Dowmloads the template
+// TODO: Make this so it will take an arg and return the right template
+func downloadTemplate() {
+	fileUrl := "https://github.com/candtechsoftware/gogetter/tree/main/cmd/template/main.go"
+	cmd := exec.Command("wget", fileUrl)
+	err := cmd.Run()
+	if err != nil {
+		log.Fatalf("Failed in creating a main.go command: %s", err)
+	}
 }
 
 // Creates  project
